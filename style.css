@@ -284,3 +284,18 @@ footer {
     color: white;
     margin-top: 30px;
 }
+/* AJUSTE EN style.css */
+
+/* Clase para ocultar los regalos comprados usando display: none */
+.regalo-item.comprado {
+    /* Esto remueve completamente el elemento del flujo de la página */
+    display: none; 
+}
+
+/* Opcional: Estilo para botones deshabilitados */
+.comprado-button:disabled {
+    background-color: #ccc; /* Gris para indicar deshabilitado */
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
