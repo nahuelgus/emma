@@ -299,3 +299,46 @@ footer {
     box-shadow: none;
     transform: none;
 }
+
+/* AJUSTE EN style.css - Botón Comprado */
+
+/* Estilo base del botón "Ya lo Compré" */
+.comprado-button {
+    display: block;
+    background-color: var(--pastel-green); /* Verde Pastel */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px; /* Bordes redondeados modernos */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 15px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.comprado-button:hover {
+    background-color: #79d08e; /* Tono un poco más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comprado-button:disabled {
+    background-color: #ccc; /* Gris para indicar deshabilitado */
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: none;
+}
+
+/* Estilo para la nota de regalos sin botón */
+.nota-regalo-abierto {
+    padding: 12px;
+    color: var(--pastel-blue);
+    font-style: italic;
+    font-size: 0.95em;
+    margin-top: 25px;
+}

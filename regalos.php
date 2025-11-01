@@ -93,48 +93,88 @@ $lista_regalos = [
         <p><a href="index.html">Volver a la Invitación</a></p>
     </footer>
 
-    <script>
-        document.querySelectorAll('.comprado-button').forEach(button => {
-            button.addEventListener('click', function() {
-                const regaloId = this.getAttribute('data-id');
-                const buttonElement = this;
-                const itemElement = this.closest('.regalo-item');
+<script>
+    document.querySelectorAll('.comprado-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const regaloId = this.getAttribute('data-id');
+            const buttonElement = this;
+            const itemElement = this.closest('.regalo-item');
 
-                // Deshabilitar el botón inmediatamente para evitar clics dobles
-                buttonElement.disabled = true;
-                buttonElement.textContent = 'Guardando...';
+            // 1. Mostrar la alerta de confirmación (SweetAlert2)
+            Swal.fire({
+                title: '¿Estás seguro/a?',
+                text: "Al confirmar, este regalo se marcará como comprado y se ocultará para el resto de los invitados.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#BAFFC9', // Verde Pastel
+                cancelButtonColor: '#FFB3BA', // Rosa Pastel
+                confirmButtonText: '¡Sí, lo compro!',
+                cancelButtonText: 'Cancelar',
+                customClass: {
+                    confirmButton: 'swal2-confirm-button', // Clase para aplicar el color pastel con CSS si fuera necesario
+                    cancelButton: 'swal2-cancel-button',
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    // Si el usuario confirma, procedemos con la acción
+                    buttonElement.disabled = true;
+                    buttonElement.textContent = 'Guardando...';
 
-                // Usamos Fetch API para enviar la solicitud al servidor
-                fetch('marcar_comprado.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: 'regalo_id=' + encodeURIComponent(regaloId)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Si el servidor confirma (SUCCESS), actualizamos el cliente
-                        itemElement.classList.add('comprado'); // Oculta el item (ver style.css)
-                        buttonElement.textContent = '¡Ya Comprado! 🥳';
-                        alert('¡Muchas gracias por tu regalo! 🎉 Este ítem ha sido marcado y actualizado para todos.');
-                    } else {
-                        // Si hay un error de la DB
-                        alert('Hubo un error al marcar el regalo: ' + data.message);
+                    // 2. Usamos Fetch API para enviar la solicitud al servidor
+                    fetch('marcar_comprado.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'regalo_id=' + encodeURIComponent(regaloId)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // 3. Alerta de éxito (SweetAlert2)
+                            Swal.fire({
+                                title: '¡Gracias! 💖',
+                                text: 'El regalo ha sido marcado y la lista se actualizó para todos.',
+                                icon: 'success',
+                                confirmButtonColor: '#BAE1FF' // Azul Pastel
+                            });
+
+                            // Ocultar el regalo en el cliente
+                            itemElement.classList.add('comprado'); 
+                            buttonElement.textContent = '¡Ya Comprado! 🥳';
+                            
+                        } else {
+                            // 3. Alerta de error (SweetAlert2)
+                            Swal.fire(
+                                '¡Ups! 🐞',
+                                data.message || 'Hubo un error al marcar el regalo. Intenta de nuevo.',
+                                'error'
+                            );
+                            
+                            // Revertir el estado del botón
+                            buttonElement.disabled = false;
+                            buttonElement.textContent = '¡Ya lo Compré! ✅';
+                        }
+                    })
+                    .catch(error => {
+                        // 3. Alerta de error de conexión (SweetAlert2)
+                        console.error('Error de red:', error);
+                        Swal.fire(
+                            'Error de Conexión',
+                            'No se pudo conectar con el servidor. Por favor, revisa tu conexión a internet.',
+                            'error'
+                        );
+                        
+                        // Revertir el estado del botón
                         buttonElement.disabled = false;
                         buttonElement.textContent = '¡Ya lo Compré! ✅';
-                    }
-                })
-                .catch(error => {
-                    // Si hay un error de conexión
-                    console.error('Error de red:', error);
-                    alert('Error de conexión con el servidor. Intenta de nuevo.');
-                    buttonElement.disabled = false;
-                    buttonElement.textContent = '¡Ya lo Compré! ✅';
-                });
+                    });
+                }
             });
         });
-    </script>
+    });
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
