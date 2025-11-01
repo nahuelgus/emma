@@ -72,7 +72,7 @@ $lista_regalos = [
         ?>
 
         <div class="regalo-item <?php echo $clase_extra; ?>" data-id="<?php echo $regalo['id']; ?>">
-            <img src="/jpg/<?php echo $regalo['imagen']; ?>" alt="<?php echo $regalo['titulo']; ?>">
+            <img src="jpg/<?php echo $regalo['imagen']; ?>" alt="<?php echo $regalo['titulo']; ?>">
             <h3><?php echo $regalo['titulo']; ?></h3>
             <p><?php echo $regalo['descripcion']; ?></p>
             
