@@ -1,17 +1,30 @@
-/* Paleta de Colores Pasteles */
+/* ==========================================================
+   STYLE.CSS COMPLETO
+   Paleta de colores, estilos generales y animaciones
+   ========================================================== */
+
+/* Paleta de Colores Pasteles Inspirada en la Imagen */
 :root {
-    --pastel-pink: #FFB3BA; /* Rosa Pastel */
-    --pastel-blue: #BAE1FF; /* Azul Pastel */
-    --pastel-green: #BAFFC9; /* Verde Menta Pastel */
-    --pastel-yellow: #FFFFBA; /* Amarillo Suave Pastel */
-    --accent-dark: #777;
-    --whatsapp-green: #25D366;
+    /* Tonos base pastel (se mantienen, pero se priorizan los nuevos) */
+    --pastel-pink: #FFB3BA; 
+    --pastel-blue: #BAE1FF; 
+    --pastel-yellow: #FFFFBA; 
+
+    /* Tonos inspirados en tu imagen: Lilas, amarillos, verdes oscuros */
+    --main-lilac: #CDB7F3;      /* Lila suave de la mariposa/flores */
+    --main-yellow: #FFDD6B;     /* Amarillo de los girasoles */
+    --text-dark-blue: #4F5584;  /* Azul oscuro para texto y títulos */
+    --text-lilac-dark: #8A68B1; /* Lila oscuro para bordes */
+    --green-leaf: #B3D17C;      /* Verde de las hojas/botón */
+    
+    --accent-dark: #777;        /* Tono de gris para texto secundario */
+    --whatsapp-green: #25D366;  /* Verde WhatsApp */
 }
 
 /* Estilos Generales */
 body {
     font-family: 'Quicksand', sans-serif;
-    color: var(--accent-dark);
+    color: var(--text-dark-blue);
     margin: 0;
     padding: 0;
     background-color: var(--pastel-yellow); /* Fondo amarillo suave */
@@ -21,11 +34,26 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--pastel-pink);
+    color: var(--text-dark-blue);
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* HEADER / MENÚ DE NAVEGACIÓN */
+a:hover {
+    color: var(--main-lilac);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--text-dark-blue), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+
+/* ==========================================================
+   HEADER / MENÚ DE NAVEGACIÓN
+   ========================================================== */
 .main-header {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -44,20 +72,25 @@ a {
 
 .main-header nav ul li a {
     display: block;
-    padding: 15px 20px;
-    color: var(--accent-dark);
+    padding: 15px 10px;
+    color: var(--text-dark-blue);
     transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
 }
 
 .main-header nav ul li a:hover {
-    background-color: var(--pastel-pink);
+    background-color: var(--main-lilac);
     color: white;
 }
+
+/* ==========================================================
+   SECCIONES PRINCIPALES
+   ========================================================== */
 
 /* SECCIÓN HERO / BIENVENIDA */
 .hero-section {
     padding: 60px 20px;
-    background-image: linear-gradient(135deg, var(--pastel-blue), var(--pastel-green));
+    background-image: linear-gradient(135deg, var(--main-lilac), var(--main-yellow)); /* Degradado con tus colores */
     position: relative;
     overflow: hidden;
 }
@@ -65,20 +98,20 @@ a {
 .hero-section h1 {
     font-family: 'Pacifico', cursive;
     font-size: 3.5em;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--text-dark-blue); 
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
 
 .hero-section p {
     font-size: 1.2em;
-    color: white;
+    color: var(--text-dark-blue);
 }
 
 .portada-img {
     margin: 30px auto;
     width: 200px;
     height: 200px;
-    border: 8px solid var(--pastel-pink);
+    border: 8px solid var(--main-lilac);
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -102,13 +135,13 @@ a {
 }
 
 .content-section h2 {
-    color: var(--pastel-pink);
+    color: var(--text-dark-blue);
     font-family: 'Pacifico', cursive;
     margin-bottom: 25px;
 }
 
 .detail-card {
-    background-color: var(--pastel-blue);
+    background-color: var(--main-lilac);
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -127,13 +160,13 @@ a {
     gap: 10px;
     margin-bottom: 20px;
     padding: 10px 0;
-    scroll-snap-type: x mandatory; /* Para un efecto de carrusel nativo */
+    scroll-snap-type: x mandatory; 
 }
 
 .carrusel-item {
-    flex: 0 0 100%; /* Ocupa el 100% para mostrar una imagen a la vez */
+    flex: 0 0 100%; 
     scroll-snap-align: start;
-    min-width: 90%; /* Ajuste para el móvil */
+    min-width: 90%; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -148,7 +181,7 @@ a {
 /* MAPA */
 .map-embed {
     margin-top: 15px;
-    border: 3px solid var(--pastel-green);
+    border: 3px solid var(--green-leaf);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -159,7 +192,7 @@ a {
     height: 150px;
     margin: 20px auto;
     border-radius: 50%;
-    border: 5px solid var(--pastel-yellow);
+    border: 5px solid var(--main-yellow);
     overflow: hidden;
 }
 
@@ -194,10 +227,12 @@ a {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    filter: invert(1); /* Para que el icono sea blanco */
+    filter: invert(1);
 }
 
-/* DECORACIONES TEMÁTICAS (MARIPOSAS, FLORES, ABEJAS) */
+/* ==========================================================
+   DECORACIONES TEMÁTICAS (ANIMACIONES)
+   ========================================================== */
 .decoration-item {
     font-size: 2.5em;
     position: absolute;
@@ -207,7 +242,7 @@ a {
 .hero-section .butterfly {
     top: 10%;
     right: 5%;
-    color: var(--pastel-pink);
+    color: var(--text-lilac-dark);
     animation-duration: 4s;
     animation-timing-function: ease-in-out;
 }
@@ -215,14 +250,14 @@ a {
 .content-section .flower {
     bottom: 0;
     left: 5%;
-    color: var(--pastel-yellow);
+    color: var(--main-yellow);
     font-size: 3em;
 }
 
 .content-section .bee {
     top: 5%;
     right: 5%;
-    color: #FFA500; /* Naranja/Miel */
+    color: #FFA500;
     animation-duration: 2s;
 }
 
@@ -231,114 +266,175 @@ a {
     left: 50%;
     transform: translateX(-50%);
     font-size: 3.5em;
-    color: #FFD700;
+    color: var(--main-yellow);
 }
 
-/* SECCIÓN REGALOS (regalos.html) */
+/* ==========================================================
+   SECCIÓN REGALOS (regalos.php)
+   ========================================================== */
 .regalos-header {
-    background-color: var(--pastel-pink);
+    background-color: var(--main-lilac);
     color: white;
     padding: 40px 20px;
 }
 
+.nota-importante {
+    background-color: white;
+    color: var(--text-dark-blue);
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 500;
+    border: 2px solid var(--main-yellow);
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .regalos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mayor min-width */
+    gap: 30px;
+    padding: 30px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .regalo-item {
     background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .regalo-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Clase para ocultar los regalos comprados usando display: none */
+.regalo-item.comprado {
+    display: none; 
 }
 
 .regalo-item img {
     width: 100%;
-    height: 200px;
+    height: 220px; /* Altura fija para uniformidad */
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: 2px solid var(--pastel-blue);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 3px solid var(--main-lilac);
 }
 
 .regalo-item h3 {
-    color: var(--pastel-blue);
+    color: var(--text-dark-blue);
     font-family: 'Pacifico', cursive;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    background-color: var(--pastel-green);
-    color: white;
-    margin-top: 30px;
-}
-/* AJUSTE EN style.css */
-
-/* Clase para ocultar los regalos comprados usando display: none */
-.regalo-item.comprado {
-    /* Esto remueve completamente el elemento del flujo de la página */
-    display: none; 
-}
-
-/* Opcional: Estilo para botones deshabilitados */
-.comprado-button:disabled {
-    background-color: #ccc; /* Gris para indicar deshabilitado */
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-}
-
-/* AJUSTE EN style.css - Botón Comprado */
-
-/* Estilo base del botón "Ya lo Compré" */
-.comprado-button {
-    display: block;
-    background-color: var(--pastel-green); /* Verde Pastel */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px; /* Bordes redondeados modernos */
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 700;
-    margin-top: 15px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Sombra suave */
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-    letter-spacing: 0.5px;
-}
-
-.comprado-button:hover {
-    background-color: #79d08e; /* Tono un poco más oscuro al pasar el ratón */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.comprado-button:disabled {
-    background-color: #ccc; /* Gris para indicar deshabilitado */
-    color: #666;
-    cursor: not-allowed;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: none;
+    margin-top: 0;
+    font-size: 1.4em;
 }
 
 /* Estilo para la nota de regalos sin botón */
 .nota-regalo-abierto {
     padding: 12px;
-    color: var(--pastel-blue);
+    color: var(--text-dark-blue);
     font-style: italic;
     font-size: 0.95em;
     margin-top: 25px;
+}
+
+/* ==========================================================
+   BOTÓN "YA LO COMPRÉ / LO VOY A COMPRAR" (ESTILO FINAL)
+   ========================================================== */
+.comprado-button {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    
+    /* Degradado e Icono Integrado */
+    background-image: linear-gradient(135deg, var(--green-leaf) 0%, #99CC81 100%); 
+    color: white; 
+    border: none; 
+    padding: 12px 25px; 
+    border-radius: 30px; 
+    cursor: pointer;
+    font-size: 1.15em; 
+    font-weight: 700;
+    margin-top: 20px; 
+    width: fit-content; 
+    max-width: 90%; 
+    margin-left: auto; 
+    margin-right: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+    letter-spacing: 0.8px; 
+    font-family: 'Quicksand', sans-serif; 
+    position: relative; 
+    overflow: hidden; 
+    text-transform: uppercase; 
+}
+
+/* Efecto hover más vibrante y animado */
+.comprado-button:hover {
+    background-image: linear-gradient(135deg, #A8E68D 0%, #7CB966 100%); 
+    transform: translateY(-4px) scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* Estilo para el botón deshabilitado (ya comprado) */
+.comprado-button:disabled {
+    background-image: linear-gradient(135deg, #e0e0e0 0%, #c8c8c8 100%); 
+    color: #666;
+    border: none; 
+    cursor: not-allowed;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: none;
+    pointer-events: none; 
+}
+
+/* Pseudo-elemento para el icono de check (solo para el botón activo) */
+.comprado-button:not(:disabled)::after {
+    content: '✓'; 
+    font-size: 1.4em; 
+    margin-left: 10px; 
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 1; 
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+/* Pseudo-elemento para el icono de check cuando está DESHABILITADO (ya comprado) */
+.comprado-button:disabled::after {
+    content: '🥳'; 
+    font-size: 1.4em;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================================
+   SWEETALERT2 (Ajuste de estilos de librería)
+   ========================================================== */
+.swal2-confirm-button {
+    background-color: var(--green-leaf) !important; 
+    color: white !important;
+}
+.swal2-cancel-button {
+    background-color: var(--main-lilac) !important; 
+    color: white !important;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+    padding: 20px;
+    background-color: var(--green-leaf);
+    color: white;
+    margin-top: 30px;
 }
