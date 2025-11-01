@@ -37,7 +37,7 @@ $lista_regalos = [
     ['id' => 'regalo7', 'titulo' => 'Bodies y remeras (Talle 4)', 'descripcion' => 'Bodies y remeras de algodón. ¡Talle 4!', 'imagen' => 'bodies-remeras.jpg', 'is_marcable' => false],
     ['id' => 'regalo8', 'titulo' => 'Juguete de Stitch', 'descripcion' => 'Cualquier muñeco o peluche del personaje Stitch.', 'imagen' => 'juguete-stitch.jpg', 'is_marcable' => false],
     ['id' => 'regalo9', 'titulo' => 'Pantalones, buzos y shorts (Talle 4)', 'descripcion' => 'Ropa cómoda de abrigo o verano. ¡Talle 4!', 'imagen' => 'pantalones-buzos-shorts.jpg', 'is_marcable' => false],
-    ['id' => 'regalo10', 'titulo' => 'Ropa de baño para pileta y toallón', 'descripcion' => 'Trajes de baño y toallones con diseños infantiles.', 'imagen' => 'ropa-bano-toallon.jpg', 'is_marcable' => false],
+    ['id' => 'regalo10', 'titulo' => 'Bata de baño y toallon', 'descripcion' => 'Bata de baño y toallones con diseños infantiles.', 'imagen' => 'ropa-bano-toallon.jpg', 'is_marcable' => false],
     ['id' => 'regalo11', 'titulo' => 'Libros interactivos', 'descripcion' => 'Libros con texturas, sonidos o solapas. ¡Le encantan!', 'imagen' => 'libros-interactivos.jpg', 'is_marcable' => false],
 ];
 ?>
@@ -67,7 +67,7 @@ $lista_regalos = [
             // Lógica para determinar si el regalo está comprado y sus atributos
             $is_comprado = in_array($regalo['id'], $comprados);
             $clase_extra = $is_comprado ? 'comprado' : '';
-            $texto_boton = $is_comprado ? '¡Ya Comprado! 🥳' : '¡Ya lo Compré! ✅';
+            $texto_boton = $is_comprado ? '¡Ya Comprado! 🥳' : 'Ya lo compré / Lo voy a comprar ✅';
             $disabled = $is_comprado ? 'disabled' : '';
         ?>
 
