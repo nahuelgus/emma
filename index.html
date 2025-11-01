@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Cumpleaños - ¡Cumpleaños de Emma #2!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="#fecha" class="animate__animated animate__pulse animate__infinite">Fecha 🗓️</a></li>
+                <li><a href="#salon" class="animate__animated animate__pulse animate__infinite">Salón 🎈</a></li>
+                <li><a href="#confirmar" class="animate__animated animate__pulse animate__infinite">Confirmar ✅</a></li>
+                <li><a href="regalos.html" target="_blank" class="animate__animated animate__pulse animate__infinite">Regalos 🎁</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="bienvenida" class="hero-section">
+        <h1 class="animate__animated animate__bounceInDown">¡Emma Cumple 2!</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Te invitamos a celebrar el segundo cumpleaños de nuestra pequeña mariposa.</p>
+        <div class="portada-img animate__animated animate__zoomIn animate__delay-2s">
+            <img src="nina-cumple.jpg" alt="Foto de la niña de cumpleaños" class="cute-photo">
+            </div>
+        <div class="decoration-item butterfly animate__animated animate__swing animate__infinite">🦋</div>
+    </section>
+
+    <hr>
+
+    <section id="fecha" class="content-section animate__animated animate__fadeInLeft">
+        <div class="content-box">
+            <h2>🗓️ ¿Cuándo y a qué hora?</h2>
+            <p>¡Marca la fecha en tu calendario!</p>
+            <div class="detail-card">
+                <h3>**Sábado 15 de Marzo, 2026**</h3>
+                <p>Hora: **16:00 hs.**</p>
+            </div>
+            <div class="decoration-item flower">🌼</div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="salon" class="content-section salon-section animate__animated animate__fadeInRight">
+        <div class="content-box">
+            <h2>🎈 ¿Dónde festejamos?</h2>
+            <p>Salón de Fiestas **"El Jardín de las Mariposas"**</p>
+            
+            <div class="carrusel">
+                <div class="carrusel-item"><img src="salon-1.jpg" alt="Salón vista 1"></div>
+                <div class="carrusel-item"><img src="salon-2.jpg" alt="Salón vista 2"></div>
+                <div class="carrusel-item"><img src="salon-3.jpg" alt="Salón vista 3"></div>
+            </div>
+            
+            <div class="map-container">
+                <h3>📍 Cómo llegar</h3>
+                <p>Dirección: Calle Ficticia 123, Barrio Pastel, Ciudad Alegre.</p>
+                <div class="map-embed">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168884976725!2d-58.3815923!3d-34.603722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac30c4f8d55%3A0xc66578051e7f3c4d!2sObelisco!5e0!3m2!1ses-419!2sar!4v1625078400000!5m2!1ses-419!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="decoration-item bee animate__animated animate__bounce animate__infinite">🐝</div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="confirmar" class="content-section confirmar-section animate__animated animate__fadeInUp">
+        <div class="content-box">
+            <h2>✅ Confirma tu Asistencia</h2>
+            <p>¡Ayúdanos a organizar un día perfecto confirmando tu presencia antes del 5 de marzo!</p>
+            
+            <div class="confirmar-image animate__animated animate__pulse animate__infinite">
+                <img src="confirmar-imagen.jpg" alt="Niña feliz pidiendo confirmación">
+                </div>
+
+            <a href="https://wa.me/5491112345678?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20de%20Emma." target="_blank" class="whatsapp-button animate__animated animate__jello animate__delay-1s">
+                <img src="whatsapp-icon.png" alt="Icono de WhatsApp"> Confirmar asistencia
+            </a>
+            
+        </div>
+    </section>
+    
+    <div class="decoration-item sunflower">🌻</div>
+
+    <footer>
+        <p>¡Te esperamos para compartir un hermoso momento!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animación al cargar la página
+            const header = document.querySelector('.main-header');
+            header.classList.add('animate__animated', 'animate__fadeInDown');
+        });
+    </script>
+</body>
+</html>

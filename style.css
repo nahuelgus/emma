@@ -1,0 +1,286 @@
+/* Paleta de Colores Pasteles */
+:root {
+    --pastel-pink: #FFB3BA; /* Rosa Pastel */
+    --pastel-blue: #BAE1FF; /* Azul Pastel */
+    --pastel-green: #BAFFC9; /* Verde Menta Pastel */
+    --pastel-yellow: #FFFFBA; /* Amarillo Suave Pastel */
+    --accent-dark: #777;
+    --whatsapp-green: #25D366;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--accent-dark);
+    margin: 0;
+    padding: 0;
+    background-color: var(--pastel-yellow); /* Fondo amarillo suave */
+    text-align: center;
+    overflow-x: hidden; /* Evita el scroll horizontal por animaciones */
+}
+
+a {
+    text-decoration: none;
+    color: var(--pastel-pink);
+    font-weight: bold;
+}
+
+/* HEADER / MENÚ DE NAVEGACIÓN */
+.main-header {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-header nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--accent-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-header nav ul li a:hover {
+    background-color: var(--pastel-pink);
+    color: white;
+}
+
+/* SECCIÓN HERO / BIENVENIDA */
+.hero-section {
+    padding: 60px 20px;
+    background-image: linear-gradient(135deg, var(--pastel-blue), var(--pastel-green));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    color: white;
+}
+
+.portada-img {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    border: 8px solid var(--pastel-pink);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.cute-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SECCIONES DE CONTENIDO */
+.content-section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.content-section h2 {
+    color: var(--pastel-pink);
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 25px;
+}
+
+.detail-card {
+    background-color: var(--pastel-blue);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.detail-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+/* CARRUSEL (Simulación Estática) */
+.carrusel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory; /* Para un efecto de carrusel nativo */
+}
+
+.carrusel-item {
+    flex: 0 0 100%; /* Ocupa el 100% para mostrar una imagen a la vez */
+    scroll-snap-align: start;
+    min-width: 90%; /* Ajuste para el móvil */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* MAPA */
+.map-embed {
+    margin-top: 15px;
+    border: 3px solid var(--pastel-green);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* SECCIÓN CONFIRMAR */
+.confirmar-image {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 5px solid var(--pastel-yellow);
+    overflow: hidden;
+}
+
+.confirmar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTÓN DE WHATSAPP */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--whatsapp-green);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(1); /* Para que el icono sea blanco */
+}
+
+/* DECORACIONES TEMÁTICAS (MARIPOSAS, FLORES, ABEJAS) */
+.decoration-item {
+    font-size: 2.5em;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.hero-section .butterfly {
+    top: 10%;
+    right: 5%;
+    color: var(--pastel-pink);
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+}
+
+.content-section .flower {
+    bottom: 0;
+    left: 5%;
+    color: var(--pastel-yellow);
+    font-size: 3em;
+}
+
+.content-section .bee {
+    top: 5%;
+    right: 5%;
+    color: #FFA500; /* Naranja/Miel */
+    animation-duration: 2s;
+}
+
+.sunflower {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5em;
+    color: #FFD700;
+}
+
+/* SECCIÓN REGALOS (regalos.html) */
+.regalos-header {
+    background-color: var(--pastel-pink);
+    color: white;
+    padding: 40px 20px;
+}
+
+.regalos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.regalo-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.regalo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.regalo-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid var(--pastel-blue);
+}
+
+.regalo-item h3 {
+    color: var(--pastel-blue);
+    font-family: 'Pacifico', cursive;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: var(--pastel-green);
+    color: white;
+    margin-top: 30px;
+}
